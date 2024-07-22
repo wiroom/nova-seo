@@ -1,25 +1,25 @@
 {
-  "name": "wiroom/wiroom-seo",
-  "description": "Template for creating your own Laravel Nova fields.",
+  "name": "wiroom/nova-seo",
+  "description": "A Laravel Nova SEO Package",
   "keywords": [
-    "squidlab",
+    "wiroom",
     "laravel",
     "nova",
     "field",
-    "template",
+    "seo",
     "vue3",
     "typescript"
   ],
   "license": "MIT",
   "authors": [
     {
-      "name": "SquidLab",
-      "email": "info@squidlab.it",
+      "name": "Wiroom",
+      "email": "hello@wiroom.io",
       "role": "Web Agency"
     },
     {
-      "name": "Roberto Negro",
-      "email": "robertonegro@squidlab.it",
+      "name": "Julien Casanova",
+      "email": "julien@wiroom.io",
       "role": "Developer"
     }
   ],
@@ -36,18 +36,18 @@
   },
   "autoload": {
     "psr-4": {
-      "Wiroom\\WiroomSeo\\": "src/"
+      "Wiroom\\NovaSeo\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Wiroom\\WiroomSeo\\Tests\\": "tests/"
+      "Wiroom\\NovaSeo\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Wiroom\\WiroomSeo\\Providers\\FieldServiceProvider"
+        "Wiroom\\NovaSeo\\Providers\\FieldServiceProvider"
       ]
     }
   },

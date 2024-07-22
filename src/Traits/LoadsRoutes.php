@@ -1,12 +1,12 @@
 <?php
 
-namespace Wiroom\WiroomSeo\Traits;
+namespace Wiroom\NovaSeo\Traits;
 
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Laravel\Nova\Nova;
-use Wiroom\WiroomSeo\Providers\FieldServiceProvider;
+use Wiroom\NovaSeo\Providers\FieldServiceProvider;
 
 trait LoadsRoutes
 {

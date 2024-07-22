@@ -1,17 +1,17 @@
 <?php
 
-namespace Wiroom\WiroomSeo\Providers;
+namespace Wiroom\NovaSeo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
-use Wiroom\WiroomSeo\Traits\LoadsConfigs;
-use Wiroom\WiroomSeo\Traits\LoadsRoutes;
-use Wiroom\WiroomSeo\Traits\LoadsTranslations;
+use Wiroom\NovaSeo\Traits\LoadsConfigs;
+use Wiroom\NovaSeo\Traits\LoadsRoutes;
+use Wiroom\NovaSeo\Traits\LoadsTranslations;
 
 class FieldServiceProvider extends ServiceProvider
 {
-    public const string FIELD_NAME = 'wiroom-seo';
+    public const string FIELD_NAME = 'nova-seo';
 
     use LoadsTranslations;
     use LoadsConfigs;
@@ -28,10 +28,22 @@ class FieldServiceProvider extends ServiceProvider
             Nova::style(self::FIELD_NAME, __DIR__.'/../../dist/css/field.css');
         });
 
-        $this->loadTranslations(__DIR__.'/../../resources/lang', self::FIELD_NAME);
 
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'nova-seo');
+
+        //$this->loadTranslations(__DIR__.'/../../resources/lang', self::FIELD_NAME);
+        //$this->loadRoutes(__DIR__.'/../../routes');
+
+        // php artisan vendor:publish --tag="nova-seo-config"
         $this->loadConfigs(__DIR__.'/../../config');
 
-        $this->loadRoutes(__DIR__.'/../../routes');
+        // php artisan vendor:publish --tag="nova-seo-migrations"
+        $this->publishesMigrations([
+            __DIR__.'/../../database/migrations' => database_path('migrations'),
+        ], 'nova-seo-migrations');
+        // php artisan vendor:publish --tag="nova-seo-views"
+        $this->publishes([
+            __DIR__.'/../../resources/views' => resource_path('views/vendor/nova-seo'),
+        ], 'nova-seo-views');
     }
 }

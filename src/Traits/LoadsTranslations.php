@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiroom\WiroomSeo\Traits;
+namespace Wiroom\NovaSeo\Traits;
 
 use Outl1ne\NovaTranslationsLoader\LoadsNovaTranslations;
 

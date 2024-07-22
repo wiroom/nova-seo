@@ -1,6 +1,6 @@
 <?php
 
-namespace Wiroom\WiroomSeo\Traits;
+namespace Wiroom\NovaSeo\Traits;
 
 trait LoadsConfigs
 {
@@ -24,7 +24,7 @@ trait LoadsConfigs
                 if ($this->app->runningInConsole() && $publishConfigs) {
                     $this->publishes([
                         $packageConfigsDir.DIRECTORY_SEPARATOR.$file => config_path($file),
-                    ], 'config');
+                    ], 'nova-seo-config');
                 }
 
                 $namespace = preg_replace('/\.php$/', '', $file) ?: '';

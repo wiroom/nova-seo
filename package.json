@@ -1,12 +1,12 @@
 {
-  "name": "@wiroom/wiroom-seo",
-  "description": "Template for creating your own Laravel Nova fields.",
+  "name": "@wiroom/nova-seo",
+  "description": "Nova SEO field.",
   "keywords": [
-    "squidlab",
+    "wiroom",
     "laravel",
     "nova",
     "field",
-    "template",
+    "seo",
     "vue3",
     "typescript"
   ],
@@ -15,13 +15,13 @@
   "type": "module",
   "contributors": [
     {
-      "name": "SquidLab",
-      "email": "info@squidlab.it",
-      "url": "https://squidlab.it"
+      "name": "Wiroom",
+      "email": "hello@wiroom.io",
+      "url": "https://wiroom.io"
     },
     {
-      "name": "Roberto Negro",
-      "email": "robertonegro@squidlab.it"
+      "name": "Julien Casanova",
+      "email": "julien@soluo.fr"
     }
   ],
   "repository": {
