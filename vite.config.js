@@ -11,6 +11,10 @@ export default defineConfig({
         __dirname,
         'vendor/laravel/nova/resources/js/mixins/packages.js'
       ),
+      '@/mixins': path.join(
+        __dirname,
+        'vendor/laravel/nova/resources/js/mixins/packages.js'
+      ),
       '@': path.resolve(__dirname, 'resources/js'),
       '@root': path.resolve(__dirname),
       '@css': path.resolve(__dirname, 'resources/css'),
