@@ -17,8 +17,3 @@ Thumbs.db
 phpunit.xml
 .phpunit.result.cache
 
-
-# -------------------------------
-# Branch ::: !release
-# -------------------------------
-/dist
