@@ -52,7 +52,7 @@
     "laravel-nova": "*"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^17.7.0",
     "@inertiajs/inertia": "^0.11.1",
     "@inertiajs/inertia-vue3": "^0.6.0",
