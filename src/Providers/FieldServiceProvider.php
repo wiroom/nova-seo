@@ -1,10 +1,11 @@
-<?php
+<?php /** @noinspection PhpMultipleClassDeclarationsInspection */
 
 namespace Wiroom\NovaSeo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
+use Wiroom\NovaSeo\Resources\SeoMeta;
 use Wiroom\NovaSeo\Traits\LoadsConfigs;
 use Wiroom\NovaSeo\Traits\LoadsRoutes;
 use Wiroom\NovaSeo\Traits\LoadsTranslations;
@@ -17,8 +18,11 @@ class FieldServiceProvider extends ServiceProvider
     use LoadsConfigs;
     use LoadsRoutes;
 
-    public function register()
+    public function register(): void
     {
+        Nova::resources([
+            SeoMeta::class,
+        ]);
     }
 
     public function boot(): void
