@@ -84,7 +84,7 @@
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
-    "vue": "^3.3.4"
+    "vue": "^3.4.34"
   },
   "dependencies": {
     "@squidlab/nova-vue3-helper": "^1.1.0",
