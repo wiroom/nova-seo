@@ -16,7 +16,7 @@ const hasMinimumSeo = meta.title.length >= 3 && meta.title.length <= 70 && meta.
 <template>
   <div
     :class="config.rootClass"
-    class="flex items-center gap-x-1.5"
+    class="flex items-center"
   >
     <span
       class="flex size-3 rounded-full"
@@ -26,11 +26,13 @@ const hasMinimumSeo = meta.title.length >= 3 && meta.title.length <= 70 && meta.
           'bg-red-500': !robotsEnabled,
         }"
     />
-    <span
-      v-if="showDetails && !robotsEnabled"
-      class="text-xs text-gray-500 dark:text-gray-400">No index</span>
-    <span
-      v-else-if="showDetails && !hasMinimumSeo"
-      class="text-xs text-gray-500 dark:text-gray-400">À améliorer</span>
+    <div v-if="showDetails" class="ml-1.5">
+      <span
+        v-if="!robotsEnabled"
+        class="text-xs text-gray-500 dark:text-gray-400">No index</span>
+      <span
+        v-else-if="!hasMinimumSeo"
+        class="text-xs text-gray-500 dark:text-gray-400">À améliorer</span>
+    </div>
   </div>
 </template>
