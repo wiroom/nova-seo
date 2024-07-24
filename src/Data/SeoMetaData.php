@@ -18,9 +18,9 @@ class SeoMetaData extends Data
         public ?int $focus_keyword_score,
         public ?int $readability_score,
         public ?int $estimated_reading_time,
-        public string $permalink,
         public ?string $canonical_url,
         public ?string $image_url,
+        public string $permalink = '',
         public bool $robots_noindex = false,
         public bool $robots_nofollow = false,
     ) {
