@@ -29,6 +29,7 @@
 
     @if(!empty($seo->canonical_url))
         <link rel="canonical" href="{{ url($seo->canonical_url) }}" />
+        <meta property="og:url" content="{{ $seo->canonical_url }}" />
     @endif
 
     @if($seo->robots_noindex)
