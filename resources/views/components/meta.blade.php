@@ -17,12 +17,11 @@
 
 <title>{{ $seo->title }}</title>
 @if(config('nova-seo.seo_status'))
+    <meta property="og:title" content="{{ $seo->title }}" />
     @if(isset($seo->description) && $seo->description)
         <meta name="description" content="{{ $seo->description }}" />
+        <meta property="og:description" content="{{ $seo->description }}" />
     @endif
-
-    <meta property="og:title" content="{{ $seo->title }}" />
-    <meta property="og:description" content="{{ $seo->description }}" />
 
     @if(!empty($seo->image_url))
         <meta property="og:image" content="{{ $seo->image_url }}" />
