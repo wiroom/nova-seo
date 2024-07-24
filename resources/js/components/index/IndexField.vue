@@ -1,14 +1,5 @@
-<template>
-  <div :class="config.rootClass">
-    <span
-      class="relative bg-primary-500 text-white dark:text-gray-900 rounded text-sm font-bold inline-flex items-center justify-center px-2 py-1 bg-primary-500"
-    >
-      {{ value.counter }}
-    </span>
-  </div>
-</template>
-
 <script lang="ts" setup>
+import SeoStatus from '@/components/SeoStatus.vue'
 import { useIndexField } from '@squidlab/nova-vue3-helper';
 import { FieldProps } from '@/types/field-props';
 import { Value } from '@/types/value';
@@ -26,3 +17,10 @@ const { value } = useIndexField<FieldProps, Field, DehydratedValue, Value>(
   hydrate
 );
 </script>
+
+<template>
+  <div :class="config.rootClass">
+    <SeoStatus :meta="value" :show-details="false" />
+  </div>
+</template>
+
