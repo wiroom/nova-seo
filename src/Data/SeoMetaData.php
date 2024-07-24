@@ -2,6 +2,7 @@
 
 namespace Wiroom\NovaSeo\Data;
 
+use Illuminate\Support\Facades\Storage;
 use Spatie\LaravelData\Data;
 use Wiroom\NovaSeo\Concerns\SeoMetaable;
 
@@ -28,6 +29,7 @@ class SeoMetaData extends Data
     public static function fromIndexable(SeoMetaable $indexable): self
     {
         $seoMeta = $indexable->seo_meta;
+        $image = $seoMeta?->image;
         $permalink = $indexable->getSeoPermalink();
 
         return self::from([
@@ -36,7 +38,7 @@ class SeoMetaData extends Data
             'focus_keyword' => $seoMeta?->focus_keyword,
             'permalink' => $permalink ? url($permalink) : '',
             'canonical_url' => $seoMeta?->canonical_url ?? $indexable->getSeoCanonicalUrl(),
-            'image_url' => $seoMeta?->image ?? $indexable->getSeoImageDefault(),
+            'image_url' => $image ? Storage::disk('public')->url($image) : $indexable->getSeoImageDefault(),
             'robots_noindex' => $seoMeta?->is_robots_noindex ?? $indexable->getSeoRobotsNoIndexDefault(),
             'robots_nofollow' => $seoMeta?->is_robots_nofollow ?? $indexable->getSeoRobotsNoFollowDefault(),
         ]);
