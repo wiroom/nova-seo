@@ -10,7 +10,6 @@ import { type DehydratedValue } from '@/types/dehydrated-value'
 import { useHydrate } from '@/composables/useHydrate'
 
 const props = defineProps<FieldProps>()
-console.log(props)
 const emit = defineEmits<FieldEmitFn>()
 
 const hydrate = useHydrate()
@@ -27,7 +26,7 @@ function highlightKeywords(text: string, keywords: string) {
     return text
   }
 
-  const kwToSearch = keywords.split(' ')
+  const kwToSearch = keywords.replace(new RegExp(/[?!]/g), '').trim().split(' ')
   let highlightedText = text
   kwToSearch.forEach((kw) => {
     highlightedText = highlightedText.replace(
@@ -72,7 +71,9 @@ function highlightKeywords(text: string, keywords: string) {
           <div class="g-preview__title">
             <a :href="value.permalink" target="_blank">{{ value.title }}</a>
           </div>
-          <div class="g-preview__description" v-html="highlightKeywords(value.description, value.focus_keyword)" />
+          <div class="g-preview__description"
+               v-html="highlightKeywords(value.description, value.focus_keyword)"
+          />
         </div>
       </template>
     </PanelItem>
