@@ -27,14 +27,7 @@ function highlightKeywords(text: string, keywords: string) {
   }
 
   const kwToSearch = keywords.replace(new RegExp(/[?!]/g), '').trim().split(' ')
-  let highlightedText = text
-  kwToSearch.forEach((kw) => {
-    highlightedText = highlightedText.replace(
-      new RegExp(`(${kw})`, 'gi'),
-      '<span class="font-bold">$1</span>',
-    )
-  })
-  return highlightedText
+  return text.replace(new RegExp(`(${kwToSearch.join('|')})`, 'gi'), '<span class="font-bold">$1</span>')
 }
 
 </script>
