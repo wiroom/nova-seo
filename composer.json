@@ -1,8 +1,7 @@
 {
-  "name": "wiroom/nova-seo",
+  "name": "juliencasanova/nova-seo",
   "description": "A Laravel Nova SEO Package",
   "keywords": [
-    "wiroom",
     "laravel",
     "nova",
     "field",
@@ -19,7 +18,7 @@
     },
     {
       "name": "Julien Casanova",
-      "email": "julien@wiroom.io",
+      "email": "julien@soluo.fr",
       "role": "Developer"
     }
   ],
